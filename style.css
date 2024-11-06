@@ -1,0 +1,342 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+
+/*          NAV                     */
+/* Container del nav */
+.containerNav{
+    display: flex;
+    justify-content: space-between;
+    background-color: azure;
+}
+
+
+/* Todo lo relacionado al logo */
+
+.logoContainer{
+    margin-left: 2em ;
+}
+.logo{
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    
+}
+
+
+/* Todo lo relacionado a las cajas de redes instrucciones y demas. */
+
+
+.opcionesYRedes{
+
+
+    margin-right: 1em ;
+    display: flex;
+    margin: 0 2em;
+    align-items: center;
+}
+
+.menuItem{
+
+
+    margin: 0 2em;
+    position: relative
+}
+
+.redesOcultas{
+
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 150%;
+    left: -1%;
+    width: 130px;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+.redesOcultas li{
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+
+
+/* Instrucciones  */
+
+
+.instrucciones{
+    border: 1px solid blueviolet;
+
+    cursor: default;
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    height: 500px;
+    width: 500px;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 0 10px;
+    background:
+    /* Gradiente radial para la esquina inferior izquierda */
+    radial-gradient(at bottom left, rgba(109, 218, 226, 0.904), transparent 70%),
+    /* Gradiente radial para la esquina inferior derecha */
+    radial-gradient(at bottom right, rgba(204, 99, 204, 0.959), transparent 70%),
+    /* Gradiente lineal para suavizar los colores en el centro */
+    linear-gradient(to right, rgba(220, 213, 224, 0.3), rgba(219, 208, 224, 0.3));;
+    z-index: 100;
+}
+
+.h2Instrucciones{
+    color:black;
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.texto{
+    font-size: 14px;
+}
+
+.bx{
+    position: absolute;
+    z-index: 1000;
+    top: 10px; /* Distancia desde la parte superior */
+    right: 10px; /* Distancia desde la derecha */
+    cursor: pointer; /* Cambia el cursor al pasar por encima para indicar que es clickeable */
+    font-size: 25px; /* Tamaño del ícono */
+
+}
+
+
+
+
+@media only screen and (max-width:320px){
+
+    *{
+        box-sizing: border-box;
+    }
+
+
+    .logoContainer{
+        margin-left: 0.5em;
+        margin-top: 0.5em;
+    }
+    .logo{
+        height: 30px;
+        width: auto;
+        
+    }
+    .opcionesYRedes{
+
+        margin-right: 0 ;
+        display: flex;
+        margin: 0 0em;
+        width: 70%;
+        justify-content: space-around;
+    }
+    .menuItem{
+
+        margin: 0 0em;
+        position: relative;
+        font-size: 10px;
+    }
+
+
+    .redesOcultas{
+    
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        top: 150%;
+        left: -1%;
+        width: 70px;
+        text-decoration: none;
+        text-align: center;
+    
+    }
+
+    .instrucciones{
+        height: 50px;
+        max-height: 350px;
+        width: 90%;
+        max-width: 90vw;
+        display: none;
+        height: 500px;
+        width: 500px;
+        flex-direction: column;
+        border-radius: 15px;
+        padding: 0 10px;
+    }
+
+    .h2Instrucciones{
+            font-size: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+    .texto{
+            font-size: 7px;
+    }
+    .bx{
+        font-size: 15px;
+    }
+}
+@media only screen and (min-width:321px) and (max-width:425px){
+
+    .logoContainer{
+        margin-left: 0.5em;
+        margin-top: 0.5em;
+    }
+
+    .logo{
+        height: 30px;
+        width: auto;
+        
+    }
+
+    .opcionesYRedes{
+        margin-right: 0 ;
+        display: flex;
+        margin: 0 0em;
+        width: 70%;
+        justify-content: space-around;
+    }
+
+    .menuItem{
+        margin: 0 0em;
+        position: relative;
+        font-size: 10px;
+    }
+    .redesOcultas{
+    
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        top: 150%;
+        left: -1%;
+        width: 70px;
+        text-decoration: none;
+        text-align: center;
+    
+    }
+
+    .instrucciones{
+        height: 50px;
+        max-height: 400px;
+        width: 90%;
+        max-width: 90vw;
+        display: none;
+        height: 500px;
+        width: 500px;
+        flex-direction: column;
+        border-radius: 15px;
+        padding: 0 10px;
+    }
+
+    .h2Instrucciones{
+            font-size: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+    .texto{
+            font-size: 10px;
+    }
+    .bx{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width:426px) and (max-width:768px){
+
+    .logoContainer{
+        margin-left: 0.7em;
+        margin-top: 0.7em;
+    }
+
+    .logo{
+        height: 40px;
+        width: auto;
+        
+    }
+
+    .opcionesYRedes{
+        margin-right: 0 ;
+        display: flex;
+        margin: 0 0em;
+        width: 70%;
+        justify-content: space-around;
+    }
+
+    .menuItem{
+        margin: 0 0em;
+        position: relative;
+        font-size: 15px;
+    }
+    .instrucciones{
+        border: 1px solid blueviolet;
+
+        max-height: 400px;
+
+        cursor: default;
+        position: fixed;
+        top:55%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: none;
+        height: 500px;
+        width: 500px;
+        flex-direction: column;
+        border-radius: 15px;
+        padding: 0 10px;
+    }
+
+    .h2Instrucciones{
+            font-size: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+    .texto{
+            font-size: 10px;
+    }
+    .bx{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width:769px) and (max-width:1024px){
+
+    .logoContainer{
+        margin-left: 1em;
+        margin-top: 0.5em;
+    }
+
+    .logo{
+        height: 40px;
+        width: auto;
+        
+    }
+
+    .opcionesYRedes{
+        margin-right: 0 ;
+        display: flex;
+        margin: 0 0em;
+        width: 50%;
+        justify-content: space-around;
+    }
+
+    .menuItem{
+
+        margin: 0 0em;
+        position: relative;
+        font-size: 15px;
+    }
+}
