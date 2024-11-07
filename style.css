@@ -1,3 +1,26 @@
+/*FUENTES IMPORTADAS*/
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Unlock&display=swap'); /*Este Es para el titulo de player y pc*/
+
+/* Configuraciones:
+.pixelify-sans-<uniquifier> {
+  font-family: "Pixelify Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>; Use a value from 400 to 700
+  font-style: normal;
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -116,6 +139,145 @@
     font-size: 25px; /* Tamaño del ícono */
 
 }
+
+
+/* Seccion del juego en general */
+
+
+/* seccion del cuadro grande negro */
+
+main{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.cuadroNegro{
+    width: 700px;
+    height: 500px;
+    background-color: black;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+}
+/* Cuadro arriba */
+.cuadroArriba{
+    width: 100%;
+    height: 20%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.cuadroArriba .player, .PC{
+    font-size: 30px;
+    font-family: "Pixelify Sans", serif;
+    font-weight: 700;
+    color: aliceblue;
+   
+}
+
+.player span, .PC span{
+    display: block;
+    color: aliceblue;
+}
+
+
+
+.jugador, .computadora{
+    height: 70px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Media parte de cuadro */
+.cuadroMedio{
+    width: 100%;
+    height: 60%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+
+.imagenMovimientoGrande{
+    height: 250px;
+    width: auto;
+    object-fit: cover;
+    
+}
+
+
+.alReves{
+    transform: scaleX(-1);
+}
+
+
+/* Cuadro abajo */
+
+.cuadroBajo{
+    width: 100%;
+    height: 20%;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.imagenMovimiento{
+    height: 70px;
+    width: auto;
+    object-fit: cover;
+    background-color: rgba(194, 106, 252, 0.76);
+    border-radius: 50%;
+    border: 2px ridge black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
