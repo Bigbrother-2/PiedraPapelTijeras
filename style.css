@@ -67,10 +67,12 @@
 
 .menuItem{
 
-
+    cursor: pointer;
     margin: 0 2em;
     position: relative
 }
+
+
 
 .redesOcultas{
 
@@ -82,12 +84,14 @@
     width: 130px;
     text-decoration: none;
     text-align: center;
-
+    z-index: 10;
+    list-style-type: none
 }
 
-.redesOcultas li{
-    list-style-type: none;
+.redesOcultas li a {
+    
     margin-top: 10px;
+    
 }
 
 
@@ -246,6 +250,22 @@ main{
     border-radius: 50%;
     border: 2px ridge rgb(255, 255, 255);
 }
+
+
+/* Cuadro resultado */
+
+.cuadroResultado{
+    background-color: red;
+
+    width: 800px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 
 

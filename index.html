@@ -17,14 +17,14 @@
             </div>
             <div class="opcionesYRedes">
                 <a href="" class="menuItem">Tema</a>
-                <a href="" class="menuItem" id ="menuRedes">Redes Sociales
+                <div class="menuItem" id ="menuRedes">Redes Sociales
                     <ul class="redesOcultas">
-                        <li>Github</li>
-                        <li>Facebook</li>
-                        <li>Instagram</li>
-                        <li>Linkedln</li>
+                        <li><a href="http://github.com/Bigbrother-2" target="_blank" class="red">Github</a></li>
+                        <li><a href="https://www.facebook.com/alex.scotaro/" target="_blank" class="red">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/alex_scotaro/" target="_blank" class="red">Instagram</a></li>
+                        <li><a href="linkedin.com/in/alex-scotaro-sao/" target="_blank" class="red">Linkedln</a></li>
                     </ul>
-                </a>
+                </div>
                 <a href="" class="menuItem" id="menuInstrucciones">Instrucciones
                     
                 </a>
@@ -59,6 +59,9 @@
                 <div class="jugador">
                     <p class="player"> Player:  <span id="contadorJugador" class="player">0</span></p>
                 </div>
+                <div class="resultado">
+                    <p class="player"> Resultado  <span id="resultado" class="player"></span></p>
+                </div>
                 <div class="computadora">
                     <p class="PC"> PC:  <span id="contadorPc" class="PC">0</span></p>
                 </div>
@@ -74,6 +77,14 @@
             </div>
         </div>
     </main>
+
+
+    <!-- ventana que aparece si ganaste o perdiste la partida -->
+
+    <div class="cuadroResultado">
+        <h1 class="h1Resultado">Resultado de la partida:</h1>
+        <p class="pResultado" id="resultadoPartida">Ganaste!</p>
+    </div>
 
     <script src="./app.js"></script>
 </body>

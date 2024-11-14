@@ -3,18 +3,20 @@
 //seccion de menu desplegable
 
 let menuDesplegable = document.getElementById("menuRedes")
-let menuInterior = document.querySelector(".redesOcultas")
+let menuInterior = document.querySelectorAll(".redesOcultas")
 
 
-menuDesplegable.addEventListener("click",()=>{
-    event.preventDefault(); //Como esta entre <a></a> cada que se hace un click se recarga la pagina. Este evita que la recargue 
-    let displayActual = window.getComputedStyle(menuInterior).display
-
-    if(displayActual === "none"){
-        menuInterior.style.display = "flex"
-    } else if(displayActual === "flex"){
-        menuInterior.style.display = "none"
-    }
+menuDesplegable.addEventListener("click",(event)=>{
+    // event.preventDefault(); //Como esta entre <a></a> cada que se hace un click se recarga la pagina. Este evita que la recargue 
+    menuInterior.forEach((menu)=>{
+        let displayActual = window.getComputedStyle(menu).display
+        if(displayActual === "none"){
+            menu.style.display = "flex"
+        } else if(displayActual === "flex"){
+            menu.style.display = "none"
+        }
+    })
+    
 })
 
 // Seccion de ventana de instrucciones. 
@@ -83,6 +85,7 @@ function iniciarMovimiento (){
     palmaManoDerecha.forEach((imagen)=>{
         imagen.src = './assets/piedra.svg'
     })
+    resultado.innerText = ""
 }
 
 function movimiento(){
@@ -175,9 +178,11 @@ function eleccionPc(){
 
 let contadorJugador =  document.getElementById("contadorJugador")
 let contadorPC =  document.getElementById("contadorPc")
+let resultado = document.getElementById("resultado")
 
 let conteoPlayer = 0
 let conteoPC = 0
+
 
 
 
@@ -186,31 +191,29 @@ function comparacion(){
     if(eleccionJugador === 1 && numeroRandomPC === 2){
         conteoPlayer++
         contadorJugador.innerText = conteoPlayer
-        
-        console.log("ganaste Jugador")
+        resultado.innerText = "Ganaste"
         compararResultado()
 
     } else if(eleccionJugador === 2 && numeroRandomPC === 3){
         conteoPlayer++
         contadorJugador.innerText = conteoPlayer
-        
-        console.log("ganaste Jugador")
+        resultado.innerText = "Ganaste"
         compararResultado()
 
     } else if(eleccionJugador === 3 && numeroRandomPC === 1){
         conteoPlayer++
         contadorJugador.innerText = conteoPlayer
-        console.log("ganaste Jugador")
+        resultado.innerText = "Ganaste"
         compararResultado()
 
     } else if (eleccionJugador == numeroRandomPC){
-        console.log("Empataste")
+        resultado.innerText = "Empate"
         compararResultado()
 
     } else {
         conteoPC++
         contadorPC.innerText = conteoPC
-        console.log("Perdiste")
+        resultado.innerText = "Perdiste"
         compararResultado()
 
     }
