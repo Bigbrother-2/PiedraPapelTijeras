@@ -44,6 +44,8 @@ xInstrucciones.addEventListener("click",()=>{
 // Esta seccion es de movimiento de la palma de la mano
 
 let palmaMano = document.querySelectorAll(".imagenMovimientoGrande")
+let palmaManoDerecha = document.querySelectorAll    (".alReves")
+
 
 let disparadorMovimiento = document.querySelectorAll(".imagenMovimiento")
 
@@ -62,27 +64,83 @@ function iniciarMovimiento (){
     clearInterval(intervalo);
 
     // Iniciar el intervalo
-    intervalo = setInterval(movimiento, 6); // Cada 20 ms se ejecuta la función `movimiento`
+    intervalo = setInterval(movimiento, 6); // Cada 6 ms se ejecuta la función `movimiento`
 
-    // Detener el movimiento después de 3 segundos
+    // Detener el movimiento después de 1.5 segundos
     setTimeout(() => {
         clearInterval(intervalo);
-    }, 1500); // 3000 ms = 3 segundos
+        cambiodeImagenes()
+        comparacion()
+         //Luego de que termine el intervalo ejecuta cambioDeImagenes
+    }, 1500); // 1500 ms = 3 segundos
 
-    
+
+    //resetea la imagen a puño cerrado cada vez que se escucha el click
+    palmaMano.forEach((imagen)=>{
+        imagen.src = `./assets/piedra.svg`;
+        
+    })
+    palmaManoDerecha.forEach((imagen)=>{
+        imagen.src = './assets/piedra.svg'
+    })
 }
 
 function movimiento(){
         posicion += 2 * direccion // Esto cambia posicion en 2 pixeles
-        palmaMano.forEach((imagen)=>{
-            imagen.style.transform = `translateY(${posicion}px)`;
-            
-        }) 
+        // palmaMano.forEach((imagen)=>{
+        //     imagen.style.transform = `translateY(${posicion}px)`;
+        // })
+        palmaMano.forEach((imagen, index) => {
+            // Si es la palma derecha (digamos el segundo elemento del array), aplicar `scaleX(-1)`
+            if (index === 1) {
+                imagen.style.transform = `translateY(${posicion}px) scaleX(-1)`;
+            } else {
+                imagen.style.transform = `translateY(${posicion}px)`;
+            }
+        });
         if(posicion >=limiteInferior || posicion <= limiteSuperior){
             direccion *= -1
         }
     
 }
+
+
+//Funcion que cambia las imagenes. 
+
+function cambiodeImagenes (){
+
+    
+    if(eleccionJugador === 1){
+        palmaMano.forEach((imagen)=>{
+            imagen.src = './assets/papel.svg'
+        })
+    } else if(eleccionJugador === 2){
+        palmaMano.forEach((imagen)=>{
+            imagen.src = './assets/piedra.svg'
+        })
+    }else if(eleccionJugador === 3){
+        palmaMano.forEach((imagen)=>{
+            imagen.src = './assets/tijera.svg'
+        })
+    }
+    if(numeroRandomPC === 1){
+        palmaManoDerecha.forEach((imagen)=>{
+            imagen.src = './assets/papel.svg'
+        })
+    } else if(numeroRandomPC === 2){
+        palmaManoDerecha.forEach((imagen)=>{
+            imagen.src = './assets/piedra.svg'
+        })
+    }else if(numeroRandomPC === 3){
+        palmaManoDerecha.forEach((imagen)=>{
+            imagen.src = './assets/tijera.svg'
+        })
+    }
+    
+}
+
+
+
 
 
 /* Esta parte decide la logica del juego */
@@ -106,31 +164,70 @@ function eleccionDelJugador(){
 }
 
 function eleccionPc(){
-    numeroRandomPC = Math.floor(Math.random()*4)
-    comparacion()
+    numeroRandomPC = Math.floor(Math.random()*3)+1
+    //comparacion()
 }
+
+
+/*Aca no solo compara, si no que comparte cosas con la parte del puntaje. como suma de las varialbles de puntaje.  */
+
+
+
+let contadorJugador =  document.getElementById("contadorJugador")
+let contadorPC =  document.getElementById("contadorPc")
+
+let conteoPlayer = 0
+let conteoPC = 0
+
+
+
 
 function comparacion(){
     if(eleccionJugador === 1 && numeroRandomPC === 2){
-        console.log("ganaste jugador")
-        console.log(eleccionJugador)
-        console.log(numeroRandomPC)
-    } else if(eleccionJugador === 2 && numeroRandomPC === 3){
-        console.log("ganaste jugador")
-        console.log(eleccionJugador)
-        console.log(numeroRandomPC)
-    } else if(eleccionJugador === 3 && numeroRandomPC === 1){
+        conteoPlayer++
+        contadorJugador.innerText = conteoPlayer
+        
         console.log("ganaste Jugador")
-        console.log(eleccionJugador)
-        console.log(numeroRandomPC)
+        compararResultado()
+
+    } else if(eleccionJugador === 2 && numeroRandomPC === 3){
+        conteoPlayer++
+        contadorJugador.innerText = conteoPlayer
+        
+        console.log("ganaste Jugador")
+        compararResultado()
+
+    } else if(eleccionJugador === 3 && numeroRandomPC === 1){
+        conteoPlayer++
+        contadorJugador.innerText = conteoPlayer
+        console.log("ganaste Jugador")
+        compararResultado()
+
     } else if (eleccionJugador == numeroRandomPC){
         console.log("Empataste")
-        console.log(eleccionJugador)
-        console.log(numeroRandomPC)
+        compararResultado()
+
     } else {
+        conteoPC++
+        contadorPC.innerText = conteoPC
         console.log("Perdiste")
-        console.log(eleccionJugador)
-        console.log(numeroRandomPC)
+        compararResultado()
+
+    }
+
 }
 
+
+// Esta parte es parte del puntaje. Las funciones estan aca, pero tengo cosas en funcion de comparacion y demas. 
+
+
+function compararResultado(){
+    if(conteoPlayer === 3){
+
+        alert("Ganaste la partida")
+        location.reload();
+    } else if(conteoPC === 3){
+        alert("Perdiste la partida")
+        location.reload();
+    }
 }
