@@ -13,6 +13,17 @@
 */
 
 
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+
+/* Configuraciones
+.shrikhand-regular {
+  font-family: "Shrikhand", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+*/
+
 
 
 
@@ -134,7 +145,7 @@
     font-size: 14px;
 }
 
-.bx{
+#cierre{
     position: absolute;
     z-index: 1000;
     top: 10px; /* Distancia desde la parte superior */
@@ -255,14 +266,39 @@ main{
 /* Cuadro resultado */
 
 .cuadroResultado{
-    background-color: red;
+    background-color: rgba(105, 202, 197, 0.897);
 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     width: 800px;
     height: 400px;
-    display: flex;
-    flex-direction: row;
+    display: none;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.pResultado{
+    font-family: "Shrikhand", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 78px;
+    margin-bottom: 20px ;
+}
+
+.h1Resultado{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+}
+
+
+#cierreCuadro{
+    font-size: 100px;
+    background-color: black;
+    color: white;
+    border-radius: 40%;
 }
 
 
@@ -389,6 +425,26 @@ main{
         height: 40px;
         border: 1px solid rgb(255, 255, 255);
     }
+
+    .cuadroResultado{
+        
+        width: 300px;
+        height: 200px;
+    }
+    
+    .pResultado{
+        font-size: 25px;
+    }
+    
+    .h1Resultado{
+
+        font-size: 20px;
+    }
+    
+    
+    #cierreCuadro{
+        font-size: 35px;
+    }
 }
 @media only screen and (min-width:321px) and (max-width:425px){
 
@@ -471,6 +527,25 @@ main{
         height: 50px;
         border: 1px solid rgb(255, 255, 255);
     }
+    .cuadroResultado{
+        
+        width: 300px;
+        height: 200px;
+    }
+    
+    .pResultado{
+        font-size: 25px;
+    }
+    
+    .h1Resultado{
+
+        font-size: 20px;
+    }
+    
+    
+    #cierreCuadro{
+        font-size: 35px;
+    }
 }
 
 @media only screen and (min-width:426px) and (max-width:768px){
@@ -527,6 +602,26 @@ main{
     }
     .bx{
         font-size: 20px;
+    }
+
+    .cuadroResultado{
+        
+        width: 600px;
+        height: 400px;
+    }
+    
+    .pResultado{
+        font-size: 55px;
+    }
+    
+    .h1Resultado{
+
+        font-size: 40px;
+    }
+    
+    
+    #cierreCuadro{
+        font-size: 55px;
     }
 }
 

@@ -179,6 +179,7 @@ function eleccionPc(){
 let contadorJugador =  document.getElementById("contadorJugador")
 let contadorPC =  document.getElementById("contadorPc")
 let resultado = document.getElementById("resultado")
+let resultadoFinal = document.getElementById("resultadoPartida")
 
 let conteoPlayer = 0
 let conteoPC = 0
@@ -223,14 +224,24 @@ function comparacion(){
 
 // Esta parte es parte del puntaje. Las funciones estan aca, pero tengo cosas en funcion de comparacion y demas. 
 
+let cuadroEmergente = document.getElementById("cuadroEmergente")
+let cierreCuadro = document.getElementById("cierreCuadro")
+
 
 function compararResultado(){
     if(conteoPlayer === 3){
 
-        alert("Ganaste la partida")
-        location.reload();
+        resultadoFinal.innerText = "Ganaste!"
+        cuadroEmergente.style.display = "flex"
+        //location.reload();
     } else if(conteoPC === 3){
-        alert("Perdiste la partida")
-        location.reload();
+        resultadoFinal.innerText = "Perdiste!"
+        cuadroEmergente.style.display = "flex"
+        //location.reload();
     }
 }
+
+cierreCuadro.addEventListener("click",()=>{
+    cuadroEmergente.style.display = "none"
+    location.reload()
+})
